@@ -6,7 +6,6 @@ package code.problem.questions;
  * Sorting approach does not work if the element in an array is repeated
  */
 
-
 public class SecondLargestInArray {
 
     public static void main(String[] args) {
