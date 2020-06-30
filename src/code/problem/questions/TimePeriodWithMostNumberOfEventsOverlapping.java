@@ -3,15 +3,16 @@ package code.problem.questions;
 import java.util.*;
 
 /**
- * Given a long list of events, each event with corresponding start and end time. Find the time period when there are most number of events overlapping each other.
+ * Given a long list of events, each event with corresponding start and end time.
+ * Find the time period when there are most number of events overlapping each other.
  * for example list (start_time, end_time)
  * (5,8)
  * (1,5)
  * (4,5)
  * (2,6)
  * in time period 4 to 5, there are most number (3) events overlapping each other
+ * <p>
  *
- * Shopee Test
  */
 public class TimePeriodWithMostNumberOfEventsOverlapping {
 
@@ -25,9 +26,10 @@ public class TimePeriodWithMostNumberOfEventsOverlapping {
         periods.add(new Period(1, 5));
         periods.add(new Period(4, 5));
         periods.add(new Period(2, 6));
+        periods.add(new Period(9, 10));
 
         result = isOverlapping(periods);
-        System.out.println("Periods tested: ");
+        System.out.println("Period that overlaps at least once: ");
         for (Period period : result) {
             System.out.println(period);
         }
@@ -48,7 +50,7 @@ public class TimePeriodWithMostNumberOfEventsOverlapping {
 
         for (Period period : periods) {
             // check overlapping
-            if (periodWithLatestEnd != null && period.start < periodWithLatestEnd.end && periodWithLatestEnd.start < period.end ) {
+            if (periodWithLatestEnd != null && period.start < periodWithLatestEnd.end && periodWithLatestEnd.start < period.end) {
                 periodSet.add(period);
                 periodSet.add(periodWithLatestEnd);
                 count++;
